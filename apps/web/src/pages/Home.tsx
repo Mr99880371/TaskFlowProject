@@ -1,6 +1,6 @@
-import { TopBarBoard } from '@/features/tasks/components/TopBarBoard'
-import { TaskBoard } from '@/features/tasks/components/TaskBoard'
-import { Header } from '@/components/layout/Header'
+import { TopBarBoard } from '@/features/tasks/TopBarBoard'
+import { TaskBoard } from '@/features/tasks/TaskBoard'
+import { Header } from '@/components/Header'
 import { Dashboard } from '@/features/dashboard/Dashboard'
 
 export function Home() {

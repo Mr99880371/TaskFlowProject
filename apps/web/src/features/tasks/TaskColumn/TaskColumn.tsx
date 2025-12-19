@@ -12,6 +12,14 @@ type Props = {
   tasks: TaskWithComputedFields[]
 }
 
+const COUNTER_COLORS: Record<TaskWithComputedFields['status'], string> = {
+  TODO: 'bg-blue-100 text-blue-600',
+  IN_PROGRESS: 'bg-blue-100 text-blue-600',
+  DELAYED: 'bg-orange-100 text-orange-600',
+  DONE: 'bg-green-100 text-green-600',
+}
+
+
 export function TaskColumn({ title, status, tasks }: Props) {
   const dispatch = useAppDispatch()
   const [editingTaskId, setEditingTaskId] = useState<string | null>(
@@ -27,12 +35,13 @@ export function TaskColumn({ title, status, tasks }: Props) {
       <div
         ref={setNodeRef}
         className={`
-          flex h-full w-[280px] flex-shrink-0 flex-col
-          rounded-lg p-3 border transition
+          flex h-full w-full min-w-[280px] sm:w-[280px] flex-shrink-0 flex-col
+          rounded-xl p-3 transition-all duration-200
+          shadow-md hover:shadow-lg
           ${
             isOver
-              ? 'border-blue-400 bg-blue-50'
-              : 'border-zinc-200/60 bg-white'
+              ? 'border-2 border-blue-500 bg-blue-50' 
+              : 'border border-zinc-100 bg-white'
           }
         `}
       >
@@ -42,7 +51,7 @@ export function TaskColumn({ title, status, tasks }: Props) {
             {title}
           </h2>
 
-          <span className="rounded-full bg-zinc-200 px-2 py-0.5 text-xs font-medium text-zinc-600">
+          <span className={`rounded-full px-2 py-0.5 text-xs font-medium ${COUNTER_COLORS[status]}`} aria-label={`Total de ${tasks.length} tarefas na coluna ${title}`}>
             {tasks.length}
           </span>
         </div>

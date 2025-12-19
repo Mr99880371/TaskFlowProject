@@ -8,7 +8,7 @@ export function Header() {
   const search = useAppSelector(state => state.filters.search)
 
   return (
-    <header className="mx-auto flex max-w-7xl items-center gap-4 rounded-xl bg-white px-6 py-3 shadow-sm">
+    <header className="x-auto flex max-w-full items-center gap-3 sm:gap-4 rounded-xl bg-white px-4 sm:px-6 py-3 shadow-sm">
       <img src={Logo} alt="Logo" className="h-10 w-10" />
 
       {/* Search */}

@@ -4,7 +4,7 @@ type Props = {
 
 export function PageContainer({ children }: Props) {
   return (
-    <main className="mx-auto max-w-[1200px] px-6 pt-6">
+    <main className="mx-auto flex max-w-screen-2xl px-4 sm:px-6 lg:px-8">
       {children}
     </main>
   );

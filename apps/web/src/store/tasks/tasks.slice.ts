@@ -40,6 +40,7 @@ const tasksSlice = createSlice({
       const updated = resolveTaskStatus({
         ...task,
         status: action.payload.to,
+        completedAt: action.payload.to === 'DONE' ? new Date().toISOString() : task.completedAt,
       })
 
       state.byId[task.id] = updated
