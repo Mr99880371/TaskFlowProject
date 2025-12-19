@@ -1,4 +1,4 @@
-export type TaskStatus = 'IDEAS' | 'TODO' | 'IN_PROGRESS' | 'DELAYED' | 'DONE';
+export type TaskStatus = 'TODO' | 'IN_PROGRESS' | 'DELAYED' | 'DONE';
 
 export type Responsible = {
   name: string;
