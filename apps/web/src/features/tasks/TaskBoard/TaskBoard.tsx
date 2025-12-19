@@ -67,13 +67,13 @@ export function TaskBoard() {
   }
 
   return (
-    <section className="mx-auto mt-6 w-full">
+    <section className="mx-auto mt-6 max-w-7xl px-6">
       <DndContext
         collisionDetection={pointerWithin}
         onDragEnd={handleDragEnd}
         sensors={sensors}
       >
-        <div className="flex flex-col gap-6 sm:flex-row sm:overflow-x-auto pb-6 h-[calc(100vh-180px)] sm:h-[calc(100vh-160px)]">
+        <div className="flex flex-col gap-5 sm:flex-row sm:overflow-x-auto pb-6">
           {COLUMNS.map(column => (
             <TaskColumn
               key={column.status}
