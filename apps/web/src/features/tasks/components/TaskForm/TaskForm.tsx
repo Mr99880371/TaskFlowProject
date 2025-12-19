@@ -26,6 +26,8 @@ export function TaskForm({ taskId, onClose }: TaskFormProps) {
     email: '',
   })
 
+  const [error, setError] = useState('')
+
   useEffect(() => {
     if (task) {
       setTitle(task.title)
@@ -36,7 +38,12 @@ export function TaskForm({ taskId, onClose }: TaskFormProps) {
   }, [task])
 
   function handleSubmit(e: React.FormEvent) {
-    e.preventDefault()
+    e.preventDefault();
+    
+    if (!responsible?.name || !responsible?.email) {
+      setError('Preencha o responsável pela tarefa')
+      return
+    }
 
     if (taskId) {
       dispatch(
@@ -104,6 +111,7 @@ export function TaskForm({ taskId, onClose }: TaskFormProps) {
           <input
             type="date"
             value={dueDate}
+            required
             onChange={e => setDueDate(e.target.value)}
             className="rounded-lg bg-zinc-800 px-4 py-3 text-sm text-zinc-100 focus:outline-none focus:ring-2 focus:ring-blue-600"
           />
@@ -133,7 +141,14 @@ export function TaskForm({ taskId, onClose }: TaskFormProps) {
               }
               className="flex-1 rounded-lg bg-zinc-800 px-4 py-3 text-sm text-zinc-100 placeholder-zinc-400 focus:outline-none focus:ring-2 focus:ring-blue-600"
             />
+
           </div>
+          
+          {error && (
+            <p className="text-sm text-red-500">
+              {error}
+            </p>
+          )}
 
           {/* Footer */}
           <div className="mt-6 flex items-center justify-between">

@@ -58,8 +58,6 @@ export function TaskCard({
     <div
       ref={setNodeRef}
       style={style}
-      {...attributes}
-      {...listeners}
       className={`
         cursor-grab
         rounded-xl
@@ -72,21 +70,21 @@ export function TaskCard({
       `}
     >
       {/* Header */}
-      <div className="flex items-start justify-between">
+      <div {...attributes} {...listeners} className="flex items-start justify-between">
         <h3 className="text-sm font-semibold text-zinc-900 whitespace-pre-line">
           {task.title}
         </h3>
 
         <div className="flex gap-2">
           <button
-            onClick={() => onEdit(task.id)}
+            onClick={() =>{console.log('edit', task.id); onEdit(task.id)}}
             className="text-zinc-400 hover:text-zinc-600 disabled:opacity-30"
           >
             <Pencil size={14} />
           </button>
 
           <button
-            onClick={() => onDelete(task.id)}
+            onClick={() => {console.log('delete', task.id); onDelete(task.id)}}
             className="text-zinc-400 hover:text-red-500 disabled:opacity-30"
           >
             <X size={14} />
