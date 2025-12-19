@@ -7,7 +7,7 @@ import {
 } from './task.helpers'
 
 export function resolveTaskStatus(
-  task: Task & { wasDelayed?: boolean }
+  task: Task & { wasDelayed?: boolean; delayDays?: number }
 ): TaskWithComputedFields {
 
   if (task.status === 'DONE') {

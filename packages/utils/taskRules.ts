@@ -3,6 +3,7 @@ import type { TaskStatus } from '@taskflow/types';
 
 export function isTaskDelayed(task: Task, now = new Date()): boolean {
   if (task.status === 'DONE') return false;
+  if (!task.dueDate) return false;
 
   const dueDate = new Date(task.dueDate);
   return dueDate < now;
