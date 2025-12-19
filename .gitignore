@@ -1,0 +1,29 @@
+# dependencies
+node_modules
+.pnpm-store
+
+# build outputs
+dist
+build
+out
+
+# env
+.env
+.env.*
+!.env.example
+
+# logs
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+
+# OS
+.DS_Store
+
+# IDE
+.vscode
+.idea
+
+# cache
+.cache
+.turbo
