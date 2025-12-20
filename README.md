@@ -50,11 +50,9 @@ O repositório utiliza **pnpm workspaces** para gerenciar de forma centralizada 
 
 ---
 
-## ⚠️ Limitações Atuais
-
-Atualmente, o projeto está otimizado exclusivamente para uso em **Desktop**. Mesmo assim, a interface já possui suporte para dispositivos móveis (responsividade mobile).
-Além disso, Também está operando com Ordenação Implícita já que as tarefas são ordenadas apenas pela ordem de inserção no estado do Redux.
----
+Atualmente, o projeto possui as seguintes limitações conhecidas:
+- **Suporte Mobile**: A interface está otimizada exclusivamente para Desktop. Um app mobile baseado no projeto está planejado e ainda em andamento.
+- **Ordenação Implícita**: As tarefas são ordenadas apenas pela ordem de inserção no estado do Redux.
 
 ## 🚀 Próximos Passos
 
