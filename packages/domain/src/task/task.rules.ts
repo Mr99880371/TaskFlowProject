@@ -10,6 +10,17 @@ export function resolveTaskStatus(
   task: Task & { wasDelayed?: boolean; delayDays?: number }
 ): TaskWithComputedFields {
 
+  const now = new Date();
+
+  if (task.dueDate && task.status !== 'DONE' && new Date(task.dueDate) < now) {
+    return {
+      ...task,
+      status: 'DELAYED',
+      delayDays: calculateDelayDays(task.dueDate),
+      wasDelayed: true,
+    }
+  }
+
   if (task.status === 'DONE') {
     return {
       ...task,
