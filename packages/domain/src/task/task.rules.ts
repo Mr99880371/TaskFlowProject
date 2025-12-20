@@ -45,3 +45,28 @@ export function resolveTaskStatus(
   }
 }
 
+export function completeTask(task: Task): TaskWithComputedFields {
+  if (task.status === 'DONE') {
+    return resolveTaskStatus(task);
+  }
+  
+  const completedTask: Task = {
+    ...task,
+    status: 'DONE',
+    completedAt: new Date().toISOString(),
+  };
+  
+  return resolveTaskStatus(completedTask);
+}
+
+export function canMoveTask(
+    currentStatus: Task['status'],
+    targetStatus: Task['status']
+  ): boolean {
+    if (currentStatus === 'DONE') {
+      return false;
+    }
+  
+    return true;
+}
+

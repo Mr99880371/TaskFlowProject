@@ -45,7 +45,6 @@ export function TaskColumn({ title, status, tasks }: Props) {
           }
         `}
       >
-        {/* Header */}
         <div className="mb-3 flex items-center justify-between">
           <h2 className="text-sm font-semibold text-zinc-700">
             {title}
@@ -57,8 +56,7 @@ export function TaskColumn({ title, status, tasks }: Props) {
         </div>
 
         <div className="mb-3 h-px w-full bg-zinc-200" />
-
-        {/* Tasks */}
+        
         <div className="flex flex-1 flex-col gap-3">
           {tasks.length === 0 && (
             <div className="min-h-[80px] rounded-md border border-dashed border-zinc-300" />
@@ -77,7 +75,6 @@ export function TaskColumn({ title, status, tasks }: Props) {
         </div>
       </div>
 
-      {/* Edit Modal */}
       {editingTaskId && (
         <TaskForm
           taskId={editingTaskId}

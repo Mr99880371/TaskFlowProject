@@ -5,7 +5,6 @@ import { TaskStatus } from '@taskflow/types'
 import { TasksState } from './tasks.types'
 import { rehydrateTasks } from './tasks.rehydrate'
 
-
 const persistedState = loadTasks()
 
 const initialState: TasksState = persistedState

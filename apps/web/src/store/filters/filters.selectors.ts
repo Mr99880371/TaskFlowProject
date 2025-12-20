@@ -7,12 +7,10 @@ export const selectVisibleTasks = (state: RootState) => {
 
   let result = tasks
 
-  // ✅ FILTRO POR STATUS (array)
   if (status.length > 0) {
     result = result.filter(task => status.includes(task.status))
   }
 
-  // ✅ FILTRO POR RESPONSÁVEL
   const responsibleName = state.filters.responsibleName ?? ''
 
     if (responsibleName.trim()) {
@@ -25,7 +23,6 @@ export const selectVisibleTasks = (state: RootState) => {
     )
     }
 
-  // ✅ BUSCA GLOBAL (máscara)
   if (search.trim()) {
     const q = search.toLowerCase()
 

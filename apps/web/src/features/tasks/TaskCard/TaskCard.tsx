@@ -1,7 +1,9 @@
 import { useDraggable } from '@dnd-kit/core'
 import { CSS } from '@dnd-kit/utilities'
 import type { TaskWithComputedFields } from '@taskflow/domain'
-import { Pencil, X } from 'lucide-react'
+import { Move, Pencil, X } from 'lucide-react'
+import { MoveMenu } from '@/components/MoveMenu'
+import { useState } from 'react'
 
 type TaskCardProps = {
   task: TaskWithComputedFields
@@ -36,6 +38,8 @@ export function TaskCard({ task, onEdit, onDelete }: TaskCardProps) {
     transform: CSS.Translate.toString(transform),
     opacity: isDragging ? 0.5 : 1,
   }
+
+  const [isMoveMenuOpen, setIsMoveMenuOpen] = useState(false)
 
   const isDone = task.status === 'DONE'
   const wasLate = task.wasDelayed === true
@@ -77,6 +81,25 @@ export function TaskCard({ task, onEdit, onDelete }: TaskCardProps) {
         </h3>
 
         <div className="flex gap-2">
+
+          <div className="relative">
+            <button
+              onClick={() => setIsMoveMenuOpen(v => !v)}
+              className="text-zinc-400 hover:text-blue-500 disabled:opacity-30"
+              aria-label="Mover tarefa"
+            >
+              <Move size={14} />
+            </button>
+
+            {isMoveMenuOpen && (
+              <MoveMenu
+                taskId={task.id}
+                currentStatus={task.status}
+                onClose={() => setIsMoveMenuOpen(false)}
+              />
+            )}
+          </div>
+
           <button
             onClick={() => onEdit(task.id)}
             className="text-zinc-400 hover:text-zinc-600 disabled:opacity-30"

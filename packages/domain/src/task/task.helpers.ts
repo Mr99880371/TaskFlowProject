@@ -14,7 +14,6 @@ export function calculateDaysLeft(dueDate: string): number {
   const due = new Date(dueDate);
   const today = new Date();
 
-  // zera horas
   due.setHours(0, 0, 0, 0);
   today.setHours(0, 0, 0, 0);
 

@@ -77,7 +77,7 @@ export function TaskForm({ taskId, onClose }: TaskFormProps) {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60">
       <div className="w-full max-w-md rounded-xl bg-zinc-900 p-6 shadow-xl">
-        {/* Header */}
+
         <div className="mb-5 flex items-center justify-between">
           <h2 className="text-base font-medium text-zinc-100">
             {taskId ? 'Editar tarefa' : 'Nova tarefa'}
@@ -91,7 +91,6 @@ export function TaskForm({ taskId, onClose }: TaskFormProps) {
           </button>
         </div>
 
-        {/* Form */}
         <form onSubmit={handleSubmit} className="flex flex-col gap-4">
           <input
             value={title}
@@ -116,7 +115,6 @@ export function TaskForm({ taskId, onClose }: TaskFormProps) {
             className="rounded-lg bg-zinc-800 px-4 py-3 text-sm text-zinc-100 focus:outline-none focus:ring-2 focus:ring-blue-600"
           />
 
-          {/* Responsible */}
           <div className="flex gap-3">
             <input
               placeholder="Nome do responsável"
@@ -150,7 +148,6 @@ export function TaskForm({ taskId, onClose }: TaskFormProps) {
             </p>
           )}
 
-          {/* Footer */}
           <div className="mt-6 flex items-center justify-between">
             {taskId && (
               <button
