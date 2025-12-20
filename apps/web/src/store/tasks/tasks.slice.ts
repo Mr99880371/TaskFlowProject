@@ -27,9 +27,9 @@ const tasksSlice = createSlice({
   initialState,
   reducers: {
     addTask(state, action) {
-      const computed = resolveTaskStatus(action.payload.task)
-      state.byId[computed.id] = computed
-      state.allIds.push(computed.id)
+      const computed = resolveTaskStatus(action.payload.task);
+      state.byId[computed.id] = computed;
+      state.allIds.push(computed.id);
     },
 
     moveTask(state, action: PayloadAction<MoveTaskPayload>) {
