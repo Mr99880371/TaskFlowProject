@@ -52,15 +52,17 @@ O repositório utiliza **pnpm workspaces** para gerenciar de forma centralizada 
 
 ## ⚠️ Limitações Atuais
 
-Atualmente, o projeto está otimizado exclusivamente para uso em **Desktop**. Ainda assim, a interface já possui suporte para dispositivos móveis (responsividade mobile).
-
+Atualmente, o projeto está otimizado exclusivamente para uso em **Desktop**. Mesmo assim, a interface já possui suporte para dispositivos móveis (responsividade mobile).
+Além disso, Também está operando com Ordenação Implícita já que as tarefas são ordenadas apenas pela ordem de inserção no estado do Redux.
 ---
 
 ## 🚀 Próximos Passos
 
-O desenvolvimento do TaskFlowProject é contínuo, e a seguinte melhoria está planejada para as próximas versões:
+O desenvolvimento do TaskFlowProject é contínuo, e as seguintes melhorias estão planejadas para as próximas versões:
 
-**📱 App Mobile:** Implementação de um aplicativo adaptado com interações touch em smartphones e tablets.
+1.  **📱 App Mobile:** Implementação de um aplicativo adaptado com interações touch em smartphones e tablets.
+2.  **📄 Paginação e Performance**: Implementar lógica de paginação ou *infinite scroll* para o carregamento de cards, garantindo que o sistema continue rápido mesmo com milhares de tarefas.
+3.  **🔢 Ordenação Avançada**: Adicionar campos de data de criação (`createdAt`) e prioridade, permitindo que o usuário escolha como deseja visualizar suas tarefas de forma explícita.
 
 ---
 
